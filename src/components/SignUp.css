@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-
 * {
   margin: 0;
   padding: 0;
@@ -8,16 +7,21 @@
   font-family: "Montserrat", sans-serif;
 }
 
-
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url("bg scholar.svg");
+  z-index: -1;
+}
 
 #root {
   width: 100%;
   padding: 0.6rem;
 }
 
-.signup-container 
-{
-  
+.signup-container {
     z-index: 10;
   margin: 0 auto;
   max-width: 410px;

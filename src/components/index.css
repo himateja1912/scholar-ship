@@ -1,4 +1,4 @@
-/* Importing Google Fonts - Montserrat */
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
@@ -8,7 +8,14 @@
   font-family: "Montserrat", sans-serif;
 }
 
-
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url("bg scholar.svg");
+  z-index: -1;
+}
 
 #root {
   width: 100%;
@@ -16,6 +23,7 @@
 }
 
 .login-container {
+  z-index: 10;
   margin: 0 auto;
   max-width: 410px;
   padding: 2rem 1.5rem;
@@ -131,7 +139,7 @@
 }
 
 .login-form .input-field:focus ~ i:not(.eye-icon) {
-  color: #5F41E4;
+  color: #433874;
 }
 
 .login-form .input-wrapper i.eye-icon {

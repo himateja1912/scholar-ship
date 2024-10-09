@@ -1,0 +1,148 @@
+.home-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1{
+    font-size: auto;
+  background: linear-gradient(to right, #b927fc 0%, #2c64fc 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  }
+  .hero-section {
+    background-image: linear-gradient(to bottom, #333, #555);
+    background: url('../assests/bg.svg');
+    color: #fff;
+    padding: 100px 20px;
+    text-align: center;
+  }
+  
+  .hero-section h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .intro-section {
+    padding: 50px 20px;
+  }
+  
+  .features-section {
+    padding: 50px 20px;
+    background-color: #f7f7f7;
+  }
+  
+  .features-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .features-section li {
+    margin-bottom: 10px;
+  }
+  
+  .call-to-action {
+    padding: 50px 20px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .call-to-action button {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  /* CSS */
+  .explore-button {
+    appearance: none;
+    background-color: #FFFFFF;
+    border-radius: 25px;
+    border-style: none;
+    box-shadow: #ADCFFF 0 -12px 6px inset;
+    box-sizing: border-box;
+    color: #000000;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system,sans-serif;
+    font-size: auto;
+    font-weight: 700;
+    letter-spacing: -.24px;
+    margin: 0;
+    outline: none;
+    padding: 10px;;
+    quotes: auto;
+    text-align: center;
+    text-decoration: none;
+    transition: all .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .explore-button:hover {
+    background-color: #92abe2;
+    box-shadow: #624dae 0 -6px 8px inset;
+    transform: scale(1.125);
+  }
+  
+  .explore-button:active {
+    transform: scale(1.025);
+  }
+  
+  @media (min-width: 768px) {
+    .explore-button {
+      font-size: auto;
+      padding: auto;
+    }
+  }
+
+  .reg-button {
+    appearance: none;
+    background-color: #363333;
+    border-radius: 25px;
+    border-style: none;
+    box-shadow: #252526 0 -12px 6px inset;
+    box-sizing: border-box;
+    color: #646262;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system,sans-serif;
+    font-size: auto;
+    font-weight: 700;
+    letter-spacing: -.24px;
+    margin: 0;
+    outline: none;
+    padding: 1rem 1.3rem;
+    quotes: auto;
+    text-align: center;
+    text-decoration: none;
+    transition: all .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .reg-button:hover {
+    background-color: #131314;
+    box-shadow: #35333e 0 -6px 8px inset;
+    transform: scale(1.125);
+  }
+  
+  .reg-button:active {
+    transform: scale(1.025);
+  }
+  
+  @media (min-width: 768px) {
+    .reg-button {
+      font-size: auto;
+      padding: .75rem 2rem;
+    }
+  }
