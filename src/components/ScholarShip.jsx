@@ -12,7 +12,7 @@ import axios from 'axios'
 const ScholarshipList = () => {
   const [scholarships,setScholarships]=useState([]);
   useEffect(()=>{
-    axios.get("http://localhost:8080/applicantInfo/getdata").then((res)=>{
+    axios.get("https://scholar-ship-backend-production.up.railway.app/applicantInfo/getdata").then((res)=>{
       setScholarships(res.data)
     })
   },[])
