@@ -21,7 +21,7 @@ const SignUp = () => {
    function handleSubmit(event)
   {
     event.preventDefault();
-    axios.post("http://localhost:8080/user/signup",{
+    axios.post("https://scholar-ship-backend-production.up.railway.app/user/signup",{
       username:username,
       password:password,
       email:email,
