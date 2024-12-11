@@ -13,7 +13,7 @@ html{
 
 /* Hero Section */
 .hero-section {
-  background-image: url("C:\Users\Lenovo\teja new dir os\scholor\src\assests\close-up-idea-concept.jpg");
+  background-image: url("../assests/close-up-idea-concept.jpg");
   background-size: cover;
   background-position: center;
   color: #fff;
