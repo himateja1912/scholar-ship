@@ -32,7 +32,7 @@ const ScholarshipForm = () => {
     if (studentId) {
       console.log("Fetching data for studentId:", studentId);  // Debug log
       axios
-        .get(`http://localhost:8080/applicantInfo/getApplicantByStudentId?studentId=${studentId}`)
+        .get(`https://scholar-ship-backend-production.up.railway.app/applicantInfo/getApplicantByStudentId?studentId=${studentId}`)
         .then((response) => {
           console.log("Fetched Data:", response.data);  // Debug log
           setFirstName(response.data.firstName || "");
