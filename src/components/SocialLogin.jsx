@@ -46,7 +46,7 @@ const SocialLogin = () => {
     e.preventDefault();
     setErrorMessage("");
     console.log(email+ pass);
-    axios.get(`http://localhost:8080/user/login/${email}/${pass}`)
+    axios.get(`https://scholar-ship-backend-production.up.railway.app/user/login/${email}/${pass}`)
       .then((res) => {
         if(res.data ==="Login successfull"){
           navigate("/student");
