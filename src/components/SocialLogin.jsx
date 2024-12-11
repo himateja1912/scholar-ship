@@ -1,8 +1,10 @@
+import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Navbar from "./Navbar";
 
 // InputField Component
-const InputField = ({ type, placeholder, icon }) => {
-  // State to toggle password visibility
+const InputField = ({ type, placeholder, icon, value, onChange }) => {
   const [isPasswordShown, setIsPasswordShown] = useState(false);
 
   return (
@@ -12,6 +14,8 @@ const InputField = ({ type, placeholder, icon }) => {
         placeholder={placeholder}
         className="input-field"
         required
+        value={value}
+        onChange={onChange}
       />
       <i className="material-symbols-rounded">{icon}</i>
       {type === 'password' && (
@@ -25,35 +29,51 @@ const InputField = ({ type, placeholder, icon }) => {
 
 // SocialLogin Component
 const SocialLogin = () => {
-  // Function to handle button clicks for different providers
+  const [email, setEmail] = useState("");
+  const [pass, setPass] = useState("");
+  const navigate = useNavigate(); 
+  const [errorMessage,setErrorMessage] = useState(""); 
+
   const handleLoginClick = (provider) => {
     if (provider === "google") {
-      // Open Google login in a new tab
       window.open("https://www.google.com", "_blank");
     } else if (provider === "apple") {
-      // Placeholder for Apple login
       alert("Apple login coming soon!");
     }
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setErrorMessage("");
+    console.log(email+ pass);
+    axios.get(`http://localhost:8080/user/login/${email}/${pass}`)
+      .then((res) => {
+        if(res.data ==="Login successfull"){
+          navigate("/student");
+        }
+        else{
+          setErrorMessage(res.data );
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching user data:", error);
+        alert("An error occurred during login.");
+      });
+  };
+
   return (
-    <div className="login-container" >
+    <div>
+      <Navbar/>
+    <div className="login-container">
       <h2 className="form-title">Log in with</h2>
 
-      {/* Social Login Buttons */}
       <div className="social-login">
-        <button
-          className="social-button"
-          onClick={() => handleLoginClick("google")}
-        >
+        <button className="social-button" onClick={() => handleLoginClick("google")}>
           <img src="google.svg" alt="Google" className="social-icon" />
           Google
         </button>
 
-        <button
-          className="social-button"
-          onClick={() => handleLoginClick("apple")}
-        >
+        <button className="social-button" onClick={() => handleLoginClick("apple")}>
           <img src="apple.svg" alt="Apple" className="social-icon" />
           Apple
         </button>
@@ -62,18 +82,33 @@ const SocialLogin = () => {
       <p className="separator"><span>or</span></p>
 
       {/* Form for Email and Password login */}
-      <form action="#" className="login-form">
-        <InputField type="email" placeholder="Email address" icon="mail" />
-        <InputField type="password" placeholder="Password" icon="lock" />
+      <form onSubmit={handleSubmit} className="login-form">
+        <InputField
+          type="email"
+          placeholder="Email address"
+          icon="mail"
+          value={email}
+          onChange={(e) => setEmail(e.currentTarget.value)}
+        />
+        <InputField
+          type="password"
+          placeholder="Password"
+          icon="lock"
+          value={pass}
+          onChange={(e) => setPass(e.currentTarget.value)}
+        />
+        
+        {errorMessage && <p style={{ color: "red", fontSize: "0.9rem", marginBottom: "10px ",marginTop: "5px", textAlign: "centre" }} className="error-message">{errorMessage}</p>}
+        
 
         <a href="login" className="forgot-password-link">Forgot password?</a>
         <button type="submit" className="login-button">Log In</button>
       </form>
 
-      {/* Sign-up link */}
       <p className="signup-prompt">
-        Don&apos;t have an account?<a href="/signup" className="signup-link">Sign up</a>  
+        Don&apos;t have an account? <a href="/signup" className="signup-link">Sign up</a>
       </p>
+    </div>
     </div>
   );
 };

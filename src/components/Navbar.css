@@ -7,8 +7,9 @@
 }
 
 body {
-  padding: 0;
-  margin: 0;
+  max-width: 85%;
+  padding: 0 20px;
+  margin: 0 auto;
   font-family: "Poppins", sans-serif;
 }
 
@@ -96,18 +97,20 @@ nav ul li a:hover {
 }
 
 .menubar {
-  position: absolute;
+  position: fixed; /* Fixed position for consistent behavior */
   top: 0;
-  left: -60%;
+  left: -50%; /* Initially hidden off-screen */
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  width: 60%;
-  height: 100vh;
-  padding: 20% 0;
-  background: rgba(255, 255, 255);
-  transition: all 0.5s ease-in;
+  flex-direction: column;
+  width: 50%; /* Cover only half of the screen */
+  height: 100vh; /* Full height to align vertically */
+  padding: 20px 0;
+  background: rgba(255, 255, 255, 0.95); /* Slightly opaque for visibility */
+  transition: all 0.5s ease;
   z-index: 2;
+  align-items: center;
+  justify-content: center; /* Center items vertically */
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 .active {
   left: 0;
@@ -115,19 +118,21 @@ nav ul li a:hover {
 }
 
 .menubar ul {
-  padding: 0;
   list-style: none;
+  padding: 0;
+  width: 100%;
+  text-align: left;
 }
 .menubar ul li {
-  margin-bottom: 32px;
+  margin-bottom: 20px;
 }
 
 .menubar ul li a {
   text-decoration: none;
   color: #000;
-  font-size: 95%;
-  font-weight: 400;
-  padding: 5px 10px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding:  10px;
   border-radius: 5px;
 }
 

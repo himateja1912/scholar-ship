@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import './Navbar.css'; // Assuming you have a style.css file for styling
+import './Navbar.css'; // Assuming you have Link style.css file for styling
 import { Link } from 'react-router-dom';
 const Navbar = () => {
   const hamburgerRef = useRef(null);
@@ -31,19 +31,19 @@ const Navbar = () => {
       </div>
       <ul>
         <li>
-          <a href="/">Home</a>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <a href='#'>About us</a>
+          <a href='#about-us'>About us</a>
         </li>
         <li>
-          <Link to="/view">ScholarShips</Link>
+          <a href="#contact-us">contactUs</a>
         </li>
         <li>
-          <a href="/track">Track Application</a>
+          <Link to="/">updates</Link>
         </li>
         <li>
-          <a href="/apply">Apply Now</a>
+          <Link to="/how-to-apply">Apply Now</Link>
         </li>
       </ul>
       <div className="hamburger" ref={hamburgerRef}>
@@ -55,19 +55,19 @@ const Navbar = () => {
       <div className="menubar" ref={menubarRef}>
         <ul>
           <li>
-            <a href="/">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <a href='#'>About Us</a>
+            <a href='#about-us'>About Us</a>
           </li>
           <li>
-            <a href="#">Services</a>
+            <Link to="#footer-container">contactUs</Link>
           </li>
           <li>
-            <a href="#">Track Application</a>
+            <Link to="/">updates</Link>
           </li>
           <li>
-            <a href="#">Apply Now</a>
+            <Link to="/how-to-apply">Apply Now</Link>
           </li>
         </ul>
       </div>
