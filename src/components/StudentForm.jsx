@@ -69,7 +69,7 @@ function StudentForm() {
 
 
 
-        axios.post("http://localhost:8080/applicantInfo/studentinfo",formData).then((res)=>{
+        axios.post("https://scholar-ship-backend-production.up.railway.app/applicantInfo/studentinfo",formData).then((res)=>{
             if(res.data === "info saved"){
                 navigate('/student')
               }
