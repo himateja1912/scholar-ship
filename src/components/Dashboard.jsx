@@ -13,7 +13,7 @@ const Dashboard = () => {
   e.preventDefault();
   console.log(formData);
 
-  axios.post('http://localhost:8080/applicantInfo/dashboard',formData).then((res)=>{
+  axios.post('https://scholar-ship-backend-production.up.railway.app/applicantInfo/dashboard',formData).then((res)=>{
     alert(res.data);
   })
 
